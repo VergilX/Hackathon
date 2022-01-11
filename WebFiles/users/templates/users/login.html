@@ -1,6 +1,28 @@
 {% extends 'website/layout.html' %}
 
 {% block body %}
-    <!-- Put in your code here(from body tag only) -->
-    <a href="{% url 'website:main' %}">Logout</a>
+<section>
+    <div class="hero">
+        <div class="container">
+            <div class="box">
+                <div class="form">
+                    <form action="{% url 'users:login' %}" method='post'>
+                        {% csrf_token %}
+                        <span id="login">Login</span>
+                        <div class="username">
+                            <label for="username">Username: </label>
+                            <input type="text" placeholder="Username" name='username' class='text'>
+                        </div>
+                        <div class="password">
+                            <label for="password">Password: </label>
+                            <input type="password" placeholder="Password" name='password' class='text'>
+                        </div>
+                        <input type="submit" id='submit' value='Login'>
+                        <a href="#">Not Registered?</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}

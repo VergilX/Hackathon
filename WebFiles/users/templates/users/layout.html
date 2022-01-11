@@ -1,11 +1,44 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
     <head>
-        <title>Medicine Dispenser</title>
-        <link rel = "stylesheet" href="{% static 'website/style.css' %}">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Users</title>
+        <link rel="stylesheet" href="{% static 'website/style.css' %}">
+        <link rel="icon" href="files/logo.svg">
     </head>
-    {% block body %}
-    {% endblock %}
+    <body>
+        <div class="navbar">
+            <div class="container">
+                <a href="{% url 'website:main' %}">
+                    <img src="#" alt="logo" id='logo'>
+                </a>
+
+                <nav>
+                    <ul>
+                        <li><a href="{% url 'website:main' %}">HOME</a></li>
+                        <li><a href="{% url 'users:login' %}">LOGIN</a></li>
+                        <li><a href="{% url 'users:register' %}">REGISTER</a></li>
+                        <li><a href="{% url 'website:about' %}">ABOUT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        {% block body %}
+        {% endblock %}
+        <section class='Contact'>
+            <div class="container">
+                <h3>Social Media</h3>
+                <h3>Contact Us:</h3>
+                <ul>
+                    <span>Address: </span>
+                    <span>Email: </span>
+                    <span>Phone number: </span>
+                </ul>
+            </div>
+        </section>
+    </body>
 </html>
