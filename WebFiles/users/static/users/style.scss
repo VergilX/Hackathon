@@ -2,8 +2,9 @@ $borderclr: rgb(218, 220, 224);
 $linkfont: 'Candara';
 
 body {
-    margin: 0;
+    margin: 10px;
     padding: 0;
+    // background-color: rgb(66, 1, 66);
     // Add a bg color if you want to 
 }
 
@@ -110,6 +111,8 @@ body {
                 border-radius: 5px;
                 border: 0.5px solid rgb(182, 182, 182);
                 min-width: 60%;
+                font-family: 'Lato';
+                font-size: 1.01em;
                 
             }
 
@@ -118,5 +121,16 @@ body {
                 border: 0.5px solid grey;
             }
         }
+    }
+}
+
+// css for footer
+.Contact {
+    padding: 2vh;
+    border-top: 1px solid $borderclr;
+
+    .social-media {
+        display: flex;
+        justify-content: right;
     }
 }
