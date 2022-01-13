@@ -25,7 +25,6 @@ body {
     }
 
     nav {
-        border-bottom: 1px solid $borderclr;
         padding-left: 10px;
     }
 
@@ -35,13 +34,17 @@ body {
         a {
             margin-right: 1em;
             text-decoration: none;
-            color: grey;
+            color: rgb(82, 82, 82);
             font-family: $linkfont;
+            border-bottom: 1px solid $borderclr;
+            padding: 0 3px;
+
         }
 
         a:hover {
-            border-bottom: 2px solid rgb(0, 0, 255);
+            border-bottom: 2px solid rgb(0, 255, 76);
         }
+
     }
 
     ul {

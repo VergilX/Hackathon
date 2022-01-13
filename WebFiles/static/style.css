@@ -15,7 +15,6 @@ body {
   padding: 8px 5% 3px 5%;
 }
 .navbar nav {
-  border-bottom: 1px solid #dadce0;
   padding-left: 10px;
 }
 .navbar ul, .navbar li {
@@ -24,11 +23,13 @@ body {
 .navbar ul a, .navbar li a {
   margin-right: 1em;
   text-decoration: none;
-  color: grey;
+  color: #525252;
   font-family: "Candara";
+  border-bottom: 1px solid #dadce0;
+  padding: 0 3px;
 }
 .navbar ul a:hover, .navbar li a:hover {
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid #00ff4c;
 }
 .navbar ul {
   padding: 0;

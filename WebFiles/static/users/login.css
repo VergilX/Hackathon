@@ -2,6 +2,7 @@
   min-height: 60vh;
   display: flex;
   justify-content: center;
+  background-image: url("");
 }
 .hero .container {
   margin-top: 10%;
@@ -62,6 +63,7 @@
 .hero .container .box .text:focus {
   outline: none;
   border: 0.5px solid grey;
+  box-shadow: 0 1px 6px 0 #171717;
 }
 
 /*# sourceMappingURL=login.css.map */
