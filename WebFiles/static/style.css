@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap");
 body {
   margin: 10px;
   padding: 0;
@@ -27,7 +28,7 @@ body {
   font-family: "Candara";
 }
 .navbar ul a:hover, .navbar li a:hover {
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid blue;
 }
 .navbar ul {
   padding: 0;
@@ -37,10 +38,26 @@ body {
 .Contact {
   padding: 2vh;
   border-top: 1px solid #dadce0;
+  font-family: "Dongle";
+  font-size: 2em;
 }
-.Contact .social-media {
+.Contact h3 {
+  margin: 0;
+}
+.Contact .contact ul {
+  font-size: 0.8em;
+}
+.Contact .contact ul span {
   display: flex;
-  justify-content: right;
+  margin: 2% 0;
+}
+.Contact .contact ul span a {
+  padding-left: 2%;
+  font-family: "Candara";
+  font-size: 0.6em;
+}
+.Contact .contact ul span .address {
+  margin-left: 2%;
 }
 
 /*# sourceMappingURL=style.css.map */

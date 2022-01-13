@@ -1,5 +1,9 @@
+// Variables
 $borderclr: rgb(218, 220, 224);
 $linkfont: 'Candara';
+
+// Imports 
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
 
 body {
     margin: 10px;
@@ -12,6 +16,7 @@ body {
     padding: 1.5%;
     border-bottom: 1px solid $borderclr;
     min-height: 5vh;
+    // background-color: peachpuff;
 
     .container {
         display: flex;
@@ -35,7 +40,7 @@ body {
         }
 
         a:hover {
-            border-bottom: 2px solid red;
+            border-bottom: 2px solid rgb(0, 0, 255);
         }
     }
 
@@ -50,9 +55,34 @@ body {
 .Contact {
     padding: 2vh;
     border-top: 1px solid $borderclr;
+    font-family: 'Dongle';
+    font-size: 2em;
+
+    h3 {
+        margin: 0;
+    }
 
     .social-media {
-        display: flex;
-        justify-content: right;
+    }
+
+    .contact {
+        ul {
+            font-size: 0.8em;
+            
+            span {
+                display: flex;
+                margin: 2% 0;
+
+                a {
+                    padding-left: 2%;
+                    font-family: $linkfont;
+                    font-size: 0.6em;
+                }
+
+                .address {
+                    margin-left: 2%;
+                }
+            }
+        }
     }
 }
