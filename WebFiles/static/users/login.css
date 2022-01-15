@@ -19,6 +19,11 @@
   padding: 2% 0;
   text-align: center;
 }
+.hero .container .box #invalid {
+  font-family: "Candara";
+  color: red;
+  font-size: 13px;
+}
 .hero .container .box span {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;

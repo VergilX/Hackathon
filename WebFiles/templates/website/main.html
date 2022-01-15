@@ -2,17 +2,9 @@
 
 {% block body %}
     <body>
-        <div class="container">
-            <h1>Hackathon</h1>
-            <table>
-                <tr>
-                    <td><a href="{% url 'users:login' %}"><button>Login</button></a></td>
-                    <td><a href="{% url 'users:register' %}"><button>Register</button></a></td>
-                
-                </tr>    
-                    </table>
-        </div>
-<br>
+        {% if message %}
+        <div>Loggout out successfully!</div>
+        {% endif %}
 <h2>Project Description</h2>
 <p>  HEll yeah..........
     <!-- Description --></p>
@@ -26,23 +18,5 @@
    <br>
 
    <hr>
-
-   <h3>Contact Us</h3>
-   <ul>
-       <li>Email:hhgshguhsugu</li>
-       <li>Phone:106</li>
-   </ul>
-
-
-
-
-        
-
-
-
-
-
-
-
     </body>
 {% endblock %}

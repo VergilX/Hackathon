@@ -24,6 +24,12 @@ $linkfont: 'Candara';
                 text-align: center;
             }
 
+            #invalid {
+                font-family: $linkfont;
+                color: red;
+                font-size: 13px;
+            }
+
             span {
                 font-family: 'Courier New', Courier, monospace;
                 font-weight: bold;

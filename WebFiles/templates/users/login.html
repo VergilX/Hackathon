@@ -10,7 +10,7 @@
         <div class="container">
             <div class="box">
                 <div class="form">
-                    <form action="{% url 'users:login' %}" method='post'>
+                    <form action="{% url 'users:user' %}" method='post'>
                         {% csrf_token %}
                         <span id="login">Login</span>
                         <div class="username">
@@ -21,8 +21,11 @@
                             <label for="password">Password: </label>
                             <input type="password" placeholder="Password" name='password' class='text'>
                         </div>
+                        {% if failed_msg %}
+                        <span id="invalid">{{ failed_msg }}</span>
+                        {% endif %}
                         <input type="submit" id='submit' value='Login'>
-                        <a href="#">Not Registered?</a>
+                        <a href="{% url 'users:register' %}">Not Registered?</a>
                     </form>
                 </div>
             </div>
