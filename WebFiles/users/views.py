@@ -4,6 +4,11 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login as loginuser, logout as logoutuser
 
 LOGGED_IN = False
+'''
+Notes
+- In this case, you've gotta use `if request.user.is_authenticated` in 3 functions. Instead,
+   if you can remove the tabs of LOGIN and REGISTER in webpage using LOGGED_IN/request.user.is_authenticated, it would be nice
+'''
 
 # Create your views here.
 def login(request):
