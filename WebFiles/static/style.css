@@ -45,6 +45,16 @@ body {
 .Contact h3 {
   margin: 0;
 }
+.Contact .social-media img {
+  width: 50%;
+  height: 50%;
+}
+.Contact .icons {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
 .Contact .contact ul {
   font-size: 0.8em;
 }

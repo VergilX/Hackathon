@@ -65,7 +65,16 @@ body {
         margin: 0;
     }
 
-    .social-media {
+    .social-media  img {
+        width: 50%;
+        height: 50%;
+    }
+
+    .icons {
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
     }
 
     .contact {
