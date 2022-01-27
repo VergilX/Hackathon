@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Users</title>
         <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
         <link rel="icon" href="hello.png">
     </head>
     <body>
@@ -20,9 +21,13 @@
                 <nav>
                     <ul>
                         <li><a href="{% url 'website:main' %}">HOME</a></li>
-                        <li><a href="{% url 'users:login' %}">LOGIN</a></li>
-                        <li><a href="{% url 'users:register' %}">REGISTER</a></li>
-                        <li><a href="{% url 'website:about' %}">ABOUT</a></li>
+                        {% if not request.user.is_authenticated %}
+                            <li><a href="{% url 'users:login' %}">LOGIN</a></li>
+                            <li><a href="{% url 'users:register' %}">REGISTER</a></li>
+                        {% else %}
+                            <li><a href="{% url 'users:logout' %}">LOGOUT</a></li>
+                        {% endif %}
+                            <li><a href="{% url 'website:about' %}">ABOUT</a></li>
                     </ul>
                 </nav>
             </div>

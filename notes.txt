@@ -1,0 +1,9 @@
+Notes:
+- Try to give user data back if error occurs
+- Correct the link in login and logout
+- Make sure inputs can't be empty
+
+TO DO:
+- Make structure for database
+- Make models
+- Design webpages

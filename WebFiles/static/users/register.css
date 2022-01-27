@@ -1,0 +1,88 @@
+.hero {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  background-image: url("");
+}
+.hero .container {
+  margin-top: 5%;
+  min-width: 50%;
+}
+.hero .container .box {
+  margin: 0 10% 20% 10%;
+  padding: 5%;
+  border: 1px solid #dadce0;
+  border-radius: 10px;
+}
+.hero .container .box form > * {
+  display: block;
+  padding: 2% 0;
+  text-align: center;
+}
+.hero .container .box .grid-container {
+  display: grid;
+  grid-template-columns: 30% auto;
+  grid-column-gap: 2%;
+  grid-row-gap: 5%;
+  margin-bottom: 10%;
+}
+.hero .container .box .grid-container .label {
+  display: flex;
+  text-align: right;
+}
+.hero .container .box #invalid {
+  font-family: "Candara";
+  color: red;
+  font-size: 13px;
+}
+.hero .container .box span {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+.hero .container .box label {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.hero .container .box a {
+  text-decoration: none;
+  font-family: "Candara";
+  color: grey;
+  margin-top: 3%;
+  font-size: 12px;
+}
+.hero .container .box a:hover {
+  text-decoration: underline;
+}
+.hero .container .box #submit {
+  margin: auto;
+  margin-top: 3px;
+  padding: 7px 15%;
+  border: 0.5px solid #b6b6b6;
+  border-radius: 3px;
+  font-family: "sans-serif";
+  font-weight: bold;
+  color: white;
+  background-color: #5f5ffa;
+  cursor: pointer;
+}
+.hero .container .box #submit:hover {
+  border: 1px solid black;
+}
+.hero .container .box .text {
+  padding: 5px;
+  margin-left: 2px;
+  border-radius: 5px;
+  border: 0.5px solid #b6b6b6;
+  min-width: 60%;
+  font-size: 1.01em;
+}
+.hero .container .box .text:focus {
+  outline: none;
+  border: 0.5px solid grey;
+  box-shadow: 0 1px 6px 0 #171717;
+}
+.hero .container .box i {
+  margin-left: -30px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=register.css.map */

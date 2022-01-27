@@ -1,0 +1,107 @@
+$borderclr: rgb(218, 220, 224);
+$linkfont: 'Candara';
+
+// You can place this in separate files. css for login page
+.hero {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    background-image: url("");
+    
+    .container {
+        margin-top: 5%;
+        min-width: 50%;
+
+        .box {
+            margin: 0 10% 20% 10%;
+            padding: 5%;
+            border: 1px solid $borderclr;
+            border-radius: 10px;
+            
+            form > *{ 
+                display: block;
+                padding: 2% 0;
+                text-align: center;
+            }
+
+            .grid-container {
+                display: grid;
+                grid-template-columns: 30% auto;
+                grid-column-gap: 2%;
+                grid-row-gap: 5%;
+                margin-bottom: 10%;
+
+                .label {
+                    display: flex;
+                    text-align: right;
+                }
+            }
+
+            #invalid {
+                font-family: $linkfont;
+                color: red;
+                font-size: 13px;
+            }
+
+            span {
+                font-family: 'Courier New', Courier, monospace;
+                font-weight: bold;
+            }
+
+            label {
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            
+            a {
+                text-decoration: none;
+                font-family: $linkfont;
+                color: grey;
+                margin-top: 3%;
+                font-size: 12px;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            #submit {
+                margin: auto;
+                margin-top: 3px;
+                padding: 7px 15%;
+                border: 0.5px solid rgb(182, 182, 182);
+                border-radius: 3px;
+                font-family: 'sans-serif';
+                font-weight: bold;
+                color: white;
+                background-color: rgb(95, 95, 250);
+                cursor: pointer;
+            }
+            
+            #submit:hover {
+                border: 1px solid black;
+            }
+
+            .text {
+                padding: 5px;
+                margin-left: 2px;
+                border-radius: 5px;
+                border: 0.5px solid rgb(182, 182, 182);
+                min-width: 60%;
+                // font-family: 'Lato';
+                font-size: 1.01em;
+                
+            }
+
+            .text:focus {
+                outline: none;
+                border: 0.5px solid grey;
+                box-shadow: 0 1px 6px 0 #171717;
+            }
+
+            i {
+                margin-left: -30px;
+                cursor: pointer;
+            }
+        }
+    }
+}

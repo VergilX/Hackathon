@@ -1,6 +1,53 @@
 {% extends 'layout.html' %}
+{% load static %}
 
 {% block body %}
-    <!-- Put in your code here(from body tag only) -->
-    <h1>Register</h1>
+<head>
+    <link rel="stylesheet" href="{% static 'users/register.css' %}">
+</head>
+<section>
+    <div class="hero">
+        <div class="container">
+            <div class="box">
+                <div class="form">
+                    <form action="{% url 'users:register' %}" method='post'>
+                        {% csrf_token %}
+                        <span id="login">Register</span>
+                        <div class="grid-container">
+                            <div class="label">
+                                First Name: 
+                            </div>
+                            <input type="text" placeholder="First Name" name="firstname" class="text">
+                            <div class="label">
+                                Last Name: 
+                            </div>
+                            <input type="text" placeholder="Last Name" name="lastname" class="text">
+                            <div class="label">
+                                Username: 
+                            </div>
+                            <input type="text" placeholder="Username" name="username" class="text">
+                            <div class="label">
+                                Email: 
+                            </div>
+                            <input type="email" placeholder="Email" name="email" class="text">
+                            <div class="label">
+                                Password: 
+                            </div>
+                            <input type="password" placeholder="Password" name="password" class="text">
+                            <div class="label">
+                                Confirm Passoword: 
+                            </div>
+                            <input type="password" placeholder="Confirm Password" name="cpassword" class="text">
+                        </div>
+                        <input type="submit" id='submit' value='Register'>
+                        {% if error %}
+                            <span id="invalid">{{ error }}</span>
+                        {% endif %}
+                        <a href="{% url 'users:login' %}">Already have an account?</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
