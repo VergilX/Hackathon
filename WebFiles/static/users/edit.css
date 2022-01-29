@@ -1,0 +1,74 @@
+.hero {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  border-radius: 25px;
+  background-color: #ebeb34;
+}
+.hero .container {
+  padding: 1%;
+  margin: 3% 0;
+  min-width: 70%;
+  text-align: center;
+}
+.hero .text {
+  padding: 5px;
+  margin-left: 2px;
+  border-radius: 5px;
+  border: 0.5px solid #b6b6b6;
+  min-width: 60%;
+  font-size: 1.01em;
+}
+.hero .text:focus {
+  outline: none;
+  border: 0.5px solid grey;
+  box-shadow: 0 1px 6px 0 #171717;
+}
+.hero .userprofiles {
+  border-radius: 25px;
+  max-width: 50%;
+  padding: 2%;
+  margin: auto auto;
+  background-color: #4fcbe0;
+}
+.hero .usercontent {
+  display: grid;
+  grid-template-columns: 30% auto;
+  padding: 3%;
+}
+.hero .usercontent label {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: auto 0;
+}
+.hero .usercontent > * {
+  margin: 1% 0;
+}
+.hero .alarms {
+  max-width: 50%;
+  margin: auto auto;
+}
+.hero .alarms form > .alarm > * {
+  display: block;
+  padding: 1%;
+}
+.hero .alarms form {
+  padding: 1%;
+}
+.hero .alarms form .time {
+  padding: 5px;
+  margin: 0 auto;
+}
+.hero .alarms form .text {
+  margin: 0 auto;
+}
+.hero .alarms .alarm {
+  padding: 1%;
+  border-radius: 25px;
+  margin-bottom: 2%;
+  background-color: #fd7c7c;
+}
+.hero .alarms .alarm .repeat {
+  padding: 2%;
+}
+
+/*# sourceMappingURL=edit.css.map */

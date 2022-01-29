@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster&display=swap');
+
+$borderclr: rgb(0, 0, 0);
+$boxcolor:rgb(253, 124, 124);
+$linkfont: 'Candara';
+
+body {
+    counter-set: Serial;
+}
+
+.hero {
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+    background-color: #ebeb34;
+    border-radius: 25px;
+
+    .container {
+        padding: 1%;
+        margin: 3% 0;
+        min-width: 70%;
+
+        a {
+            text-decoration: none;
+            font-family: $linkfont;
+            color: rgb(23, 134, 168);
+            margin-top: 3%;
+            font-size: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            font-family: 'Lobster';
+            background-image: linear-gradient(to right, #2193b0, #6dd5ed);
+            background-clip: text;
+            color: transparent;
+        }
+
+        .profile {
+            padding: 3%;
+            border: 1px solid $borderclr;
+            border-radius: 20px;
+            width: 50vw;
+            background-color: $boxcolor;
+            margin-bottom: 15px;
+
+            h2 {
+                margin-top: 0;
+                font-family: 'Ubuntu';
+                text-decoration: underline;
+            }
+        }
+
+        .userinfo {
+            display: grid;
+            grid-template-columns: auto auto;
+            margin-bottom: 2%;
+            font-family: sans-serif;
+
+            span {
+                font-family: 'Ubuntu';
+                padding: 2%;
+            }
+        }
+
+
+        .upcoming {
+            border: 1px solid $borderclr;
+            border-radius: 5px;
+            margin: 3% 0;
+            padding: 2%;
+            width: 50%;
+            border-radius: 25px;
+            background-color: $boxcolor;
+        
+
+            h2 {
+                margin-top: 0;
+                font-family: 'Ubuntu';
+                text-decoration: underline;
+            }
+        }
+        
+        .upcoming > * {
+            display: block;
+            padding: 0.5%;
+        }
+
+        table {
+            border-collapse: separate;
+            border: solid black 1px;
+            border-radius: 25px;
+            width: 60vw;
+            background-color: $boxcolor;
+        }
+        
+        td, th {
+            border-left:solid black 1px;
+            border-top:solid black 1px;
+            text-align: center;
+        }
+
+        td:first-child, th:first-child {
+            border-left: none;
+        }
+        
+        th {
+            border-top: none;
+        }
+
+        th, td {
+            padding: 2%;
+        }
+
+        tr td:first-child:before {
+            counter-increment: Serial;
+            content: counter(Serial);
+        }
+
+        #alarms {
+            margin-bottom: 2%;
+        }
+    }
+}

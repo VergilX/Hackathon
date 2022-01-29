@@ -6,7 +6,8 @@ $linkfont: 'Candara';
     min-height: 60vh;
     display: flex;
     justify-content: center;
-    background-image: url("");
+    background-color: whitesmoke;
+    border-radius: 20px;
     
     .container {
         margin-top: 5%;
@@ -17,6 +18,7 @@ $linkfont: 'Candara';
             padding: 5%;
             border: 1px solid $borderclr;
             border-radius: 10px;
+            background-color: rgb(70, 209, 66);
             
             form > *{ 
                 display: block;
@@ -46,6 +48,8 @@ $linkfont: 'Candara';
             span {
                 font-family: 'Courier New', Courier, monospace;
                 font-weight: bold;
+                font-size: 25px;
+                text-decoration: underline;
             }
 
             label {
@@ -55,9 +59,9 @@ $linkfont: 'Candara';
             a {
                 text-decoration: none;
                 font-family: $linkfont;
-                color: grey;
+                color: rgb(0, 0, 0);
                 margin-top: 3%;
-                font-size: 12px;
+                font-size: 15px;
             }
 
             a:hover {

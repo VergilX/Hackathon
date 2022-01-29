@@ -1,31 +1,55 @@
 // Variables
-$borderclr: rgb(218, 220, 224);
+$borderclr: rgb(193, 194, 196);
 $linkfont: 'Candara';
 
 // Imports 
 @import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster&display=swap');
 body {
     margin: 10px;
     padding: 0;
-    // background-color: rgb(66, 1, 66);
-    // Add a bg color if you want to 
+}
+
+svg {
+    width: 100px;
+    height: 100px;
 }
 
 .navbar {
+    position: sticky;
+    top: 0;
     padding: 1.5%;
     border-bottom: 1px solid $borderclr;
     min-height: 5vh;
-    // background-color: peachpuff;
+    background-color: peachpuff;
+    border-radius: 20px;
+    margin-bottom: 10px;
 
     .container {
         display: flex;
         place-content: space-between;
         padding: 8px 5% 3px 5%;
+
+        #logo {
+            margin-left: 7%;
+        }
+
+        h1 {
+            color:rgb(70, 209, 66);
+            font-family: 'Lobster';
+            margin: 0;
+            font-size: 4em;
+            background-image: linear-gradient(to right, #2193b0, #6dd5ed);
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
     }
 
     nav {
         padding-left: 10px;
+        margin: auto 0;
     }
 
     ul, li {
@@ -38,6 +62,7 @@ body {
             font-family: $linkfont;
             border-bottom: 1px solid $borderclr;
             padding: 0 3px;
+            font-size: 1.2em;
 
         }
 
@@ -52,6 +77,11 @@ body {
         margin: 0;
     }
 
+    img {
+        width: 30px;
+        height: 30px;
+    }
+
 }
 
 // css for footer
@@ -60,21 +90,26 @@ body {
     border-top: 1px solid $borderclr;
     font-family: 'Dongle';
     font-size: 2em;
+    background-color: peachpuff;
+    border-radius: 20px;
+    margin-top: 10px;
 
     h3 {
         margin: 0;
     }
 
     .social-media  img {
-        width: 50%;
-        height: 50%;
+        width: 50px;
+        height: 50px;
+       
     }
 
     .icons {
         height: 100px;
-        width: 100%;
+        width: 90%;
         display: flex;
         justify-content: space-between;
+        margin: 0 3%;
     }
 
     .contact {

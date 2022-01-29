@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Lobster&display=swap");
+body {
+  counter-set: Serial;
+}
+
+.hero {
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  background-color: #ebeb34;
+  border-radius: 25px;
+}
+.hero .container {
+  padding: 1%;
+  margin: 3% 0;
+  min-width: 70%;
+}
+.hero .container a {
+  text-decoration: none;
+  font-family: "Candara";
+  color: #1786a8;
+  margin-top: 3%;
+  font-size: 20px;
+}
+.hero .container a:hover {
+  text-decoration: underline;
+}
+.hero .container h1 {
+  font-family: "Lobster";
+  background-image: linear-gradient(to right, #2193b0, #6dd5ed);
+  background-clip: text;
+  color: transparent;
+}
+.hero .container .profile {
+  padding: 3%;
+  border: 1px solid black;
+  border-radius: 20px;
+  width: 50vw;
+  background-color: #fd7c7c;
+  margin-bottom: 15px;
+}
+.hero .container .profile h2 {
+  margin-top: 0;
+  font-family: "Ubuntu";
+  text-decoration: underline;
+}
+.hero .container .userinfo {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-bottom: 2%;
+  font-family: sans-serif;
+}
+.hero .container .userinfo span {
+  font-family: "Ubuntu";
+  padding: 2%;
+}
+.hero .container .upcoming {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 3% 0;
+  padding: 2%;
+  width: 50%;
+  border-radius: 25px;
+  background-color: #fd7c7c;
+}
+.hero .container .upcoming h2 {
+  margin-top: 0;
+  font-family: "Ubuntu";
+  text-decoration: underline;
+}
+.hero .container .upcoming > * {
+  display: block;
+  padding: 0.5%;
+}
+.hero .container table {
+  border-collapse: separate;
+  border: solid black 1px;
+  border-radius: 25px;
+  width: 60vw;
+  background-color: #fd7c7c;
+}
+.hero .container td, .hero .container th {
+  border-left: solid black 1px;
+  border-top: solid black 1px;
+  text-align: center;
+}
+.hero .container td:first-child, .hero .container th:first-child {
+  border-left: none;
+}
+.hero .container th {
+  border-top: none;
+}
+.hero .container th, .hero .container td {
+  padding: 2%;
+}
+.hero .container tr td:first-child:before {
+  counter-increment: Serial;
+  content: counter(Serial);
+}
+.hero .container #alarms {
+  margin-bottom: 2%;
+}
+
+/*# sourceMappingURL=user.css.map */

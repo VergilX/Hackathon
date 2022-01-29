@@ -9,14 +9,16 @@
         <title>Users</title>
         <link rel="stylesheet" href="{% static 'style.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-        <link rel="icon" href="hello.png">
+        <link rel="icon" href="{% static 'source/pill.svg' %}"> 
     </head>
     <body>
         <div class="navbar">
             <div class="container">
-                <a href="{% url 'website:main' %}">
-                    <img src="#" alt="logo" id='logo'>
+                <a href="{% url 'website:main' %}" id='logo'>
+                    <img src="{% static 'source/pill.svg' %}" alt="logo" id='logo' style="height: 100px; width: 100px;">
                 </a>
+
+                <h1>OnlyDrugs</h1>
 
                 <nav>
                     <ul>
@@ -25,6 +27,7 @@
                             <li><a href="{% url 'users:login' %}">LOGIN</a></li>
                             <li><a href="{% url 'users:register' %}">REGISTER</a></li>
                         {% else %}
+                        <li><a href="{% url 'users:user' %}">PROFILE</a></li>
                             <li><a href="{% url 'users:logout' %}">LOGOUT</a></li>
                         {% endif %}
                             <li><a href="{% url 'website:about' %}">ABOUT</a></li>
@@ -39,7 +42,7 @@
                 <div class="social-media">
                     <h3>Social Media</h3>
                     <div class="icons">
-                        <a href=""><img src="{% static 'source/facebook.svg' %}" alt=""></a>
+                        <a href=""><img src="{% static 'source/facebook.svg' %}" alt=""></a> 
                         <a href=""><img src="{% static 'source/github.svg' %}" alt=""></a>
                         <a href=""><img src="{% static 'source/instagram.svg' %}" alt=""></a>
                         <a href=""><img src="{% static 'source/twitter.svg' %}" alt=""></a>
@@ -50,13 +53,12 @@
                     <ul>
                         <span>Address: 
                             <div class="address">
-                                Dreams <br>
-                                Thevakkal <br>
-                                Ernakulam <br>
-                                Kerala
+                                OnlyDrugs<br>
+                                Michigan<br>
+                                USA
                             </div>
                         </span>
-                        <span>Email:<a href="mailto: hello@gmail.com">example@gmail.com</a> </span>
+                        <span>Email:<a href="mailto: hello@gmail.com">onlydrugs@gmail.com</a> </span>
                         <span>Phone number: 100</span>
                     </ul>
                 </div>

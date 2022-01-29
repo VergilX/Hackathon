@@ -1,21 +1,47 @@
 @import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Lobster&display=swap");
 body {
   margin: 10px;
   padding: 0;
 }
 
+svg {
+  width: 100px;
+  height: 100px;
+}
+
 .navbar {
+  position: sticky;
+  top: 0;
   padding: 1.5%;
-  border-bottom: 1px solid #dadce0;
+  border-bottom: 1px solid #c1c2c4;
   min-height: 5vh;
+  background-color: peachpuff;
+  border-radius: 20px;
+  margin-bottom: 10px;
 }
 .navbar .container {
   display: flex;
   place-content: space-between;
   padding: 8px 5% 3px 5%;
 }
+.navbar .container #logo {
+  margin-left: 7%;
+}
+.navbar .container h1 {
+  color: #46d142;
+  font-family: "Lobster";
+  margin: 0;
+  font-size: 4em;
+  background-image: linear-gradient(to right, #2193b0, #6dd5ed);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 .navbar nav {
   padding-left: 10px;
+  margin: auto 0;
 }
 .navbar ul, .navbar li {
   display: flex;
@@ -25,8 +51,9 @@ body {
   text-decoration: none;
   color: #525252;
   font-family: "Candara";
-  border-bottom: 1px solid #dadce0;
+  border-bottom: 1px solid #c1c2c4;
   padding: 0 3px;
+  font-size: 1.2em;
 }
 .navbar ul a:hover, .navbar li a:hover {
   border-bottom: 2px solid #00ff4c;
@@ -35,25 +62,33 @@ body {
   padding: 0;
   margin: 0;
 }
+.navbar img {
+  width: 30px;
+  height: 30px;
+}
 
 .Contact {
   padding: 2vh;
-  border-top: 1px solid #dadce0;
+  border-top: 1px solid #c1c2c4;
   font-family: "Dongle";
   font-size: 2em;
+  background-color: peachpuff;
+  border-radius: 20px;
+  margin-top: 10px;
 }
 .Contact h3 {
   margin: 0;
 }
 .Contact .social-media img {
-  width: 50%;
-  height: 50%;
+  width: 50px;
+  height: 50px;
 }
 .Contact .icons {
   height: 100px;
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
+  margin: 0 3%;
 }
 .Contact .contact ul {
   font-size: 0.8em;

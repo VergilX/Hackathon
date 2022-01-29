@@ -1,3 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap");
+img {
+  width: 100px;
+  height: 100px;
+}
 
+.hero {
+  display: flex;
+  justify-content: center;
+  background-color: #d65151;
+  border-radius: 20px;
+  padding: 3% 0;
+  font-size: 40px;
+}
+.hero h2 {
+  text-align: center;
+  font-family: "Ubuntu";
+  color: beige;
+  text-decoration: underline;
+  font-size: 50px;
+}
+.hero .container {
+  width: 50%;
+}
+.hero .container .description {
+  font-family: "Dongle";
+  font-size: 0.9em;
+  background-color: #856be4;
+  border-radius: 30px;
+  padding: 10px;
+}
+.hero .container .video {
+  background-color: #9554eb;
+  border-radius: 30px;
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+.hero .container .benefits {
+  background-color: #0066ff;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  padding: 10px;
+  text-align: center;
+}
+.hero .container .grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 2%;
+}
 
 /*# sourceMappingURL=main.css.map */

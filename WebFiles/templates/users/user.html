@@ -1,10 +1,56 @@
 {% extends 'layout.html' %}
+{% load static %}
 
 {% block body %}
     <head>
         <title>Profile: {{ request.user.first_name }} {{ request.user.last_name }}</title>
+        <link rel="stylesheet" href="{% static 'users/user.css' %}">
     </head>
-    <h1>Welcome {{ request.user.first_name }}!</h1>
-    <h2>Medication Scheduling</h2>
-    <a href="{% url 'users:logout' %}">Logout</a>
+    <div class="hero">
+        <div class="container">
+            <h1>Welcome {{ request.user.first_name }}!</h1>
+            <div class="profile">
+                <h2>USER PROFILE</h2>
+                <div class="userinfo">
+                    <span>Username: {{ request.user.username }}</span>
+                    <span>Email: {{ request.user.email }}</span>
+                    <span>First Name: {{ request.user.first_name }}</span>
+                    <span>Last Name: {{ request.user.last_name }}</span>
+                </div>
+            </div>
+            <div class="upcoming">
+                {% if youngest is not None %}
+                    <h2>Next Alarm: {{ youngest.name }}</h2>
+                    <span>Medicine: {{ youngest.medname }}</span>
+                    <span>Time: {{ youngest.time }}</span>
+                {% else %}
+                    <span>No alarms today</span>
+                {% endif %}
+            </div>
+            <div id="alarms">
+                <table>
+                    <tr>
+                        <th>Sl No</th>
+                        <th>Alarm Name</th>
+                        <th>Time</th>
+                        <th>Medicine Name</th>
+                        <th>Status</th>
+                    </tr>
+                    <!-- Insert table row mechanism -->
+                    {% for i in alarms %}
+                        <tr>
+                            <td></td>
+                            <td>{{ i.name }}</td>
+                            <td>{{ i.time }}</td>
+                            <td>{{ i.medname }}</td>
+                            <td>{{ i.status }}</td>
+                        </tr>
+                    {% empty %}
+                        <span>No alarms</span>
+                    {% endfor %}
+                </table>
+            </div>
+            <a href="{% url 'users:edit' %}">Edit</a>
+        </div>
+    </div>
 {% endblock %}

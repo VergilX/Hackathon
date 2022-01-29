@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block body %}
+    <head>
+        <link rel="stylesheet" href="{% static 'users/edit.css' %}">
+    </head>
+    <div class="hero">
+        <div class="container">
+            <h2>Edit contents</h2>
+            <div class="userprofiles">
+                <form action="{% url 'users:edituser' %}" method='post'>
+                    {% csrf_token %}
+                    <h3>USER PROFILE</h3>
+                        <div class="usercontent">
+                            <label for="username">Username: </label>
+                            <input type="text" placeholder="{{ request.user.username }}" name='username' class='text'>
+                            <label for="firstname">First Name: </label>
+                            <input type="text" placeholder="{{ request.user.first_name }}" name='first_name' class='text'>
+                            <label for="lastname">Last Name: </label>
+                            <input type="text" placeholder="{{ request.user.last_name }}" name='last_name' class='text'>
+                            <label for="email">Email: </label>
+                            <input type="email" placeholder="{{ request.user.email }}" name='email' class='text'>
+                            <label for="password">Password: </label>
+                            <input type="password" placeholder="Password" name='password' class='text'>
+                            <label for="cpasswd">Confirm Password: </label>
+                            <input type="password" placeholder="Confirm password" name='cpasswd' class='text'>
+                        </div>
+                    <input type="submit" value="Submit" name="submit">
+                </form>
+            </div>
+            <div class="alarms">
+                <h3>ALARMS</h3>
+                <form action="{% url 'users:edituser' %}" method='post'>
+                    {% csrf_token %}
+                    {% for i in alarms %}
+                    <div class="alarm">
+                        <label for="name">Alarm Name: </label>
+                        <input type="text" placeholder="{{ i.name }}" name="name" class="text">
+                        <label for="time">Time: </label>
+                        <input type="time" name="time" class="time" placeholder="{{ i.time }}">
+                        <label>Medicine Name: </label>
+                        <input type="text" placeholder="{{ i.medname }}" name="medname" class="text">
+                        <div class="repeat">
+                            <label for="on">Repeat:</label>
+                            <input type="radio" name="radio">
+                            <label for="on">On</label>
+                            <input type="radio" name="radio">
+                            <label for="off">Off</label>
+                        </div>
+                        <label for="repeattime">Repeat time: </label>
+                        <input type="time" name="repeattime" class="time" placeholder="{{ i.repeat_time }}">
+                    </div>
+                    {% empty %}
+                        {% for i in number %}
+                        <div class="alarm">
+                            <span>Alarm {{ i }}</span>
+                            <label for="name">Alarm Name: </label>
+                            <input type="text" placeholder="Enter alarm name" name="name" class="text">
+                            <label for="time">Time: </label>
+                            <input type="time" name="time" class="time">
+                            <label for="medname">Medicine Name: </label>
+                            <input type="text" placeholder="Enter medicine name" name="medname" class="text">
+                            <div class="repeat">
+                                <label for="on">Repeat:</label>
+                                <input type="radio" name="radio">
+                                <label for="on">On</label>
+                                <input type="radio" name="radio">
+                                <label for="off">Off</label>
+                            </div>
+                            <label for="repeattime">Repeat time: </label>
+                            <input type="time" name="repeattime" class="time">
+                        </div>
+                        {% endfor %}
+                    {% endfor %}
+                    <input type="submit" name="sumbit" value="Submit" id="submit">
+                </form>
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}
