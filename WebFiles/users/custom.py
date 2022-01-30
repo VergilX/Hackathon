@@ -9,10 +9,9 @@ import datetime
 def calculate(alarms: object) -> object:
     ''' Function to calculate nearest alarm '''
 
-    times = [i.time for i in alarms]
-    now = datetime.datetime.now().time()
-
     try:
+        times = [datetime.datetime.strptime(i.time, '%H:%M:%S').time() for i in alarms]
+        now = datetime.datetime.now().time()
         youngest = min([dt for dt in times if dt > now])
     except ValueError:
         return None

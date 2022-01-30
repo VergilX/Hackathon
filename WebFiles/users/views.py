@@ -98,19 +98,24 @@ def user(request):
 
 def edit(request):
     ''' Function to display webpage for user edit '''
-
+    
     if not request.user.is_authenticated:
         return render(request, 'website/main.html')
     else:
         alarms = request.user.alarms.all()
-        if len(alarms) != 0:
+        length = int(len(alarms))
+        print(length != 0)
+        if length != 0:
+            left = [i for i in range(length+1, 6 - length)]
+            print(left)
             return render(request, 'users/edit.html', {
                 'alarms': alarms,
+                'left': left,
             })
         else:
             return render(request, 'users/edit.html', {
                 'alarms': [],
-                'number': [i for i in range(1, 5)],
+                'left': [i for i in range(1, 5)],
             })
 
 def edituser(request):
@@ -154,16 +159,30 @@ def editalarms(request):
     if request.method == "POST":
         user = User.objects.get(username=request.user.username)
         alarms = Alarm.objects.filter(user=user)
-        print(request.POST.items())
+        print(request.POST)
+        try:
+            alarm = alarms.get(name=request.POST["alarms"])
+        except:
+            alarm = Alarm(user_id=request.user.id, name=request.POST["name"], medname=(request.POST["medname"]), time=(request.POST["time"]))
+        else:
+            alarm.name = request.POST["name"]
+            alarm.time = request.POST["time"]
+            alarm.medname = request.POST["medname"]
+        
 
+        alarm.save()
+        return HttpResponseRedirect(reverse('users:user'))
+
+        '''
         # Editing existing alarms
         for i in range(len(alarms)):
             for key, value in request.POST.items():
                 if value != '':
                     print(f"{key}, {value}")
-                    setattr(alarms[i], key, value)
+                    # setattr(alarms[i], key, value)
                 alarms[i].save()
         return HttpResponseRedirect(reverse("users:user"))
+        '''
             
     else:
         return HttpResponseRedirect(reverse('users:user'))

@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Alarm(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="alarms")
     name = models.CharField(max_length=32)
-    time = models.TimeField()
+    time = models.CharField(max_length=32)
     medname = models.CharField(max_length=64)
     status = models.CharField(max_length=10, default='Not taken', blank=True, null=True)
     REPEAT = models.BooleanField(default=False, blank=True, null=True)
