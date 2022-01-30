@@ -17,4 +17,10 @@
 - HTML
 - CSS
 
+## Dependencies
+- Django
+- MySQL
+- mysqlconnector
+- Contact Abhinand for virtual environment package
+
 > Visit [our video](https://youtu.be/QyNT844Vszo)
