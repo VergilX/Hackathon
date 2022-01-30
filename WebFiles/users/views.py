@@ -5,14 +5,18 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login as loginuser, logout as logoutuser
 from django.contrib.auth.models import User
 from .custom import *
+from users.models import Alarm
 
 # Create your views here.
 def login(request):
+    print("login")
     if request.user.is_authenticated:
         return HttpResponseRedirect(reverse("users:user"))
     return render(request, 'users/login.html')
 
 def register(request):
+    ''' Function to register user '''
+
     if request.method == "POST":
         passwd = request.POST["password"]
         cpasswd = request.POST["cpassword"]
@@ -58,11 +62,11 @@ def register(request):
 def logout(request):
     LOGGED_IN = False
     logoutuser(request)
-    return render(request, "website/main.html", {
-        'message': 'Logged out successfully!'
-    })
+    return render(request, "website/main.html")
 
 def user(request):
+    ''' Display user webpage '''
+
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -93,43 +97,73 @@ def user(request):
         })
 
 def edit(request):
+    ''' Function to display webpage for user edit '''
+
     if not request.user.is_authenticated:
         return render(request, 'website/main.html')
     else:
         alarms = request.user.alarms.all()
-        if alarms is not None:
+        if len(alarms) != 0:
             return render(request, 'users/edit.html', {
                 'alarms': alarms,
             })
         else:
             return render(request, 'users/edit.html', {
+                'alarms': [],
                 'number': [i for i in range(1, 5)],
             })
 
 def edituser(request):
+    ''' Function to edit details of user '''
+
     if request.method == 'POST':
         passwd = request.POST["password"]
         cpasswd = request.POST["cpasswd"]
         print(f"Passwords: {passwd}, {cpasswd}")
 
         if passwd != cpasswd:
+            alarms = request.user.alarms.all()
             return render(request, 'users/edit.html', {
                 'usererror': "Password and Confirm password don't match",
+                'alarms': alarms,
             })
         else:
             username = request.POST["username"]
-            print(f"New Username: {username}")
             try:
                 user = User.objects.get(username=username)
             except:
-                pass
-            else:
-                return render(request, 'users/edit.html', {
-                    'usererror': "Username already exists",
-                })
-                
-                user = User.objects.get(username=username)
-                for key, value in request.POST.items():
+                user = User.objects.get(username=request.user.username)
+                for key, value in list(request.POST.items())[1:]:
                     if value not in ['', 'cpasswd']:
                         setattr(user, key, value)
-                print(f"Username: {user.username}\nFirstname: {user.first_name}\nLastname: {user.last_name}")
+                user.save()
+                return HttpResponseRedirect(reverse('users:user'))
+            else:
+                alarms = request.user.alarms.all()
+                if alarms is not None:
+                    return render(request, 'users/edit.html', {
+                        'alarms': alarms,
+                        'usererror': "Username already exists"
+                    })
+    else:
+        return HttpResponseRedirect(reverse('users:user'))
+
+def editalarms(request):
+    ''' Function to edit alarms of user '''
+
+    if request.method == "POST":
+        user = User.objects.get(username=request.user.username)
+        alarms = Alarm.objects.filter(user=user)
+        print(request.POST.items())
+
+        # Editing existing alarms
+        for i in range(len(alarms)):
+            for key, value in request.POST.items():
+                if value != '':
+                    print(f"{key}, {value}")
+                    setattr(alarms[i], key, value)
+                alarms[i].save()
+        return HttpResponseRedirect(reverse("users:user"))
+            
+    else:
+        return HttpResponseRedirect(reverse('users:user'))

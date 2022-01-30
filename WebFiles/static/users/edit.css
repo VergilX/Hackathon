@@ -70,5 +70,8 @@
 .hero .alarms .alarm .repeat {
   padding: 2%;
 }
+.hero .alarms .alarm .submit {
+  margin: 2% auto;
+}
 
 /*# sourceMappingURL=edit.css.map */

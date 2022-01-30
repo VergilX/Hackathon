@@ -7,5 +7,8 @@
 # Project Description
 
 ## Languages used
+- Python (Django)
+- HTML
+- CSS
 
 > Visit [our website]()

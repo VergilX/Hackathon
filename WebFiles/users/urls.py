@@ -10,4 +10,5 @@ urlpatterns = [
     path("user", views.user, name="user"),
     path("edit", views.edit, name="edit"),
     path("edituser", views.edituser, name="edituser"),
+    path("editalarms", views.editalarms, name="editalarms"),
 ]
