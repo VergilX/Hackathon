@@ -20,8 +20,19 @@
 ## Dependencies
 - Django
 - MySQL
-- mysqlconnector
+- mysqlclient
+- sqlparse
 - Contact Abhinand for virtual environment package
+
+> Environment package includes: 
+> - asgiref            (3.5.0)  
+> - backports.zoneinfo (0.2.1)  
+> - Django             (4.0.1)  
+> - mysqlclient        (2.1.0)  
+> - pip                (20.0.2) 
+> - pkg-resources      (0.0.0)  
+> - setuptools         (44.0.0) 
+> - sqlparse           (0.4.2) 
 - **Be sure to update your database details under `[client]` in `my.cnf` file in *"`WebFiles/my.cnf`"***
 
 > Visit [our video](https://youtu.be/QyNT844Vszo)
