@@ -22,5 +22,6 @@
 - MySQL
 - mysqlconnector
 - Contact Abhinand for virtual environment package
+- **Be sure to update your database details under `[client]` in `my.cnf` file in *"`WebFiles/my.cnf`"***
 
 > Visit [our video](https://youtu.be/QyNT844Vszo)
